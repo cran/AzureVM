@@ -317,17 +317,22 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <a class="sourceLine" id="cb1-9" title="9">vm &lt;-<span class="st"> </span>sub<span class="op">$</span><span class="kw">create_vm</span>(<span class="st">&quot;myubuntuvm&quot;</span>, <span class="kw">user_config</span>(<span class="st">&quot;myname&quot;</span>, <span class="st">&quot;~/.ssh/id_rsa.pub&quot;</span>),</a>
 <a class="sourceLine" id="cb1-10" title="10">                    <span class="dt">location=</span><span class="st">&quot;australiaeast&quot;</span>)</a>
 <a class="sourceLine" id="cb1-11" title="11"></a>
-<a class="sourceLine" id="cb1-12" title="12"><span class="co"># run a shell script or command remotely (will be PowerShell on a Windows VM)</span></a>
-<a class="sourceLine" id="cb1-13" title="13">vm<span class="op">$</span><span class="kw">run_script</span>(<span class="st">&quot;echo hello world! &gt; /tmp/hello.txt&quot;</span>)</a>
-<a class="sourceLine" id="cb1-14" title="14"></a>
-<a class="sourceLine" id="cb1-15" title="15"><span class="co"># ... and stop it</span></a>
-<a class="sourceLine" id="cb1-16" title="16">vm<span class="op">$</span><span class="kw">stop</span>()</a>
-<a class="sourceLine" id="cb1-17" title="17"></a>
-<a class="sourceLine" id="cb1-18" title="18"><span class="co"># ... and resize it</span></a>
-<a class="sourceLine" id="cb1-19" title="19">vm<span class="op">$</span><span class="kw">resize</span>(<span class="st">&quot;Standard_DS4_v2&quot;</span>)</a>
-<a class="sourceLine" id="cb1-20" title="20"></a>
-<a class="sourceLine" id="cb1-21" title="21"><span class="co"># ... and delete it (this can be done asynchronously for a VM in its own group)</span></a>
-<a class="sourceLine" id="cb1-22" title="22">vm<span class="op">$</span><span class="kw">delete</span>()</a></code></pre></div>
+<a class="sourceLine" id="cb1-12" title="12"><span class="co"># some resources used by the VM</span></a>
+<a class="sourceLine" id="cb1-13" title="13">vm<span class="op">$</span><span class="kw">get_vnet</span>()</a>
+<a class="sourceLine" id="cb1-14" title="14">vm<span class="op">$</span><span class="kw">get_public_ip_resource</span>()</a>
+<a class="sourceLine" id="cb1-15" title="15">vm<span class="op">$</span><span class="kw">get_disk</span>(<span class="st">&quot;os&quot;</span>)</a>
+<a class="sourceLine" id="cb1-16" title="16"></a>
+<a class="sourceLine" id="cb1-17" title="17"><span class="co"># run a shell script or command remotely (will be PowerShell on a Windows VM)</span></a>
+<a class="sourceLine" id="cb1-18" title="18">vm<span class="op">$</span><span class="kw">run_script</span>(<span class="st">&quot;echo hello world! &gt; /tmp/hello.txt&quot;</span>)</a>
+<a class="sourceLine" id="cb1-19" title="19"></a>
+<a class="sourceLine" id="cb1-20" title="20"><span class="co"># ... and stop it</span></a>
+<a class="sourceLine" id="cb1-21" title="21">vm<span class="op">$</span><span class="kw">stop</span>()</a>
+<a class="sourceLine" id="cb1-22" title="22"></a>
+<a class="sourceLine" id="cb1-23" title="23"><span class="co"># ... and resize it</span></a>
+<a class="sourceLine" id="cb1-24" title="24">vm<span class="op">$</span><span class="kw">resize</span>(<span class="st">&quot;Standard_DS4_v2&quot;</span>)</a>
+<a class="sourceLine" id="cb1-25" title="25"></a>
+<a class="sourceLine" id="cb1-26" title="26"><span class="co"># ... and delete it (this can be done asynchronously for a VM in its own group)</span></a>
+<a class="sourceLine" id="cb1-27" title="27">vm<span class="op">$</span><span class="kw">delete</span>()</a></code></pre></div>
 <p>AzureVM comes with a number of predefined configurations, for deploying commonly used VM images. For example, to create an Ubuntu DSVM accessible via SSH, JupyterHub and RStudio Server:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">sub<span class="op">$</span><span class="kw">create_vm</span>(<span class="st">&quot;mydsvm&quot;</span>, <span class="kw">user_config</span>(<span class="st">&quot;myname&quot;</span>, <span class="st">&quot;~/.ssh/id_rsa.pub&quot;</span>), <span class="dt">config=</span><span class="st">&quot;ubuntu_dsvm&quot;</span>,</a>
 <a class="sourceLine" id="cb2-2" title="2">              <span class="dt">location=</span><span class="st">&quot;australiaeast&quot;</span>)</a></code></pre></div>

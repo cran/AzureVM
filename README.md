@@ -1,12 +1,12 @@
-# AzureVM
+# AzureVM <img src="man/figures/logo.png" align="right" width=150 />
 
 [![CRAN](https://www.r-pkg.org/badges/version/AzureVM)](https://cran.r-project.org/package=AzureVM)
 ![Downloads](https://cranlogs.r-pkg.org/badges/AzureVM)
-[![Travis Build Status](https://travis-ci.org/Azure/AzureVM.png?branch=master)](https://travis-ci.org/Azure/AzureVM)
+<a href="https://asiadatascience.visualstudio.com/AzureR/_build/latest?definitionId=7&branchName=master"><img src="https://asiadatascience.visualstudio.com/AzureR/_apis/build/status/Azure.AzureVM?branchName=master" alt="Build Status"></a>
 
-AzureVM is a package for interacting with [virtual machines](https://azure.microsoft.com/services/virtual-machines/) and [virtual machine scalesets](https://azure.microsoft.com/services/virtual-machine-scale-sets/) in Azure. You can deploy, start up, shut down, run scripts, deallocate and delete VMs and scalesets from the R command line. It uses the tools provided by the [AzureRMR package](https://github.com/Azure/AzureRMR) to manage VM resources and templates.
+AzureVM is a package for interacting with [virtual machines](https://azure.microsoft.com/services/virtual-machines/) and [virtual machine scalesets](https://azure.microsoft.com/services/virtual-machine-scale-sets/) in Azure. You can deploy, start up, shut down, run scripts, deallocate and delete VMs and scalesets from the R command line. It uses the tools provided by the [AzureRMR package](https://github.com/Azure/AzureRMR) to manage VM resources and templates. Version 2.0 of AzureVM is a complete rewrite of the package, aiming to make it a truly generic and flexible interface to VMs.
 
-Version 2.0 of AzureVM is a complete rewrite of the package, aiming to make it a truly generic and flexible interface to VMs.
+The primary repo for this package is at https://github.com/Azure/AzureVM; please submit issues and PRs there. It is also mirrored at the Cloudyr org at https://github.com/cloudyr/AzureVM. You can install the development version of the package with `devtools::install_github("Azure/AzureVM")`.
 
 
 ## Virtual machines
@@ -24,6 +24,11 @@ sub <- AzureRMR::get_azure_login()$
 # call sub$list_vm_sizes() to get the sizes available in your region
 vm <- sub$create_vm("myubuntuvm", user_config("myname", "~/.ssh/id_rsa.pub"),
                     location="australiaeast")
+
+# some resources used by the VM
+vm$get_vnet()
+vm$get_public_ip_resource()
+vm$get_disk("os")
 
 # run a shell script or command remotely (will be PowerShell on a Windows VM)
 vm$run_script("echo hello world! > /tmp/hello.txt")
@@ -68,8 +73,8 @@ sub$create_vm("mywinvm2", user_config("myname", password="Use-strong-passwords!"
               location="australiaeast")
 
 # Ubuntu DSVM, GPU-enabled
-sub$create_vm("mydsvm", user_config("myname", "~/.ssh/id_rsa.pub"), size="Standard_NC12",
-              config="ubuntu_dsvm_ss",
+sub$create_vm("mydsvm", user_config("myname", "~/.ssh/id_rsa.pub"), size="Standard_NC12s_v2",
+              config="ubuntu_dsvm",
               location="australiaeast")
 
 # Red Hat VM, serving HTTP/HTTPS
@@ -123,14 +128,14 @@ Each predefined VM configuration has a corresponding scaleset configuration. To 
 ```r
 # Windows Server 2019
 sub$create_vm_scaleset("mywinss", user_config("myname", password="Use-strong-passwords!"), instances=5,
-                       config="windows_2019",
+                       config="windows_2019_ss",
                        location="australiaeast")
 
 # RHEL scaleset, serving HTTP/HTTPS
 sub$create_vm_scaleset("myrhelss", user_config("myname", "~/.ssh/id_rsa.pub"), instances=5,
-                        config="rhel_8_ss",
-                        nsg=nsg_config(list(nsg_rule_allow_http, nsg_rule_allow_https)),
-                        location="australiaeast")
+                       config="rhel_8_ss",
+                       nsg=nsg_config(list(nsg_rule_allow_http, nsg_rule_allow_https)),
+                       location="australiaeast")
 
 # Ubuntu DSVM, GPU-enabled, public instances, no load balancer or autoscaler
 sub$create_vm_scaleset("mydsvmss", user_config("myname", "~/.ssh/id_rsa.pub"), instances=5,
@@ -178,4 +183,4 @@ rg$create_vm_scaleset("slavess", user_config("myname", "~/.ssh/id_rsa.pub"),
 ```
 
 ---
-[![cloudyr project logo](https://i.imgur.com/JHS98Y7.png)](https://github.com/cloudyr)
+<p align="center"><a href="https://github.com/Azure/AzureR"><img src="https://github.com/Azure/AzureR/raw/master/images/logo2.png" width=800 /></a></p>

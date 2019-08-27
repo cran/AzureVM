@@ -44,6 +44,14 @@ test_that("VM interaction works",
     expect_is(vm$get_private_ip_address(), "character")
 
     expect_is(vm$identity, "list")
+
+    expect_is(vm$get_public_ip_resource(), "az_resource")
+    expect_is(vm$get_nic(), "az_resource")
+    expect_is(vm$get_vnet(), "az_resource")
+    expect_is(vm$get_nsg(), "az_resource")
+    expect_is(vm$get_disk("os"), "az_resource")
+
+    expect_message(vm$redeploy())
 })
 
 test_that("VM deletion works",
