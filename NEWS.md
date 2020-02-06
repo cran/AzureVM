@@ -1,3 +1,8 @@
+# AzureVM 2.1.1
+
+- Require R6 2.4.1, which is needed to allow cloning of active bindings in R 4.0.
+- The `low_priority` argument to `scaleset_options` is now simply `priority`, with a default of "regular" and an alternative of "spot". Spot VMs are the replacement for low-priority VMs; seee [this page](https://azure.microsoft.com/en-us/pricing/spot/) for more details. Note that you can use the same argument to create a single (non-scaleset) spot VM, with `create_vm(*, properties=list(priority="spot"))`.
+
 # AzureVM 2.1.0
 
 * VM scalesets can now be created with data disks.

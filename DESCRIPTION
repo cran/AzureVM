@@ -1,6 +1,6 @@
 Package: AzureVM
 Title: Virtual Machines in 'Azure'
-Version: 2.1.0
+Version: 2.1.1
 Authors@R: c(
     person("Hong", "Ooi", , "hongooi@microsoft.com", role = c("aut", "cre")),
     person("Microsoft", role="cph")
@@ -11,13 +11,13 @@ BugReports: https://github.com/Azure/AzureVM/issues
 License: MIT + file LICENSE
 VignetteBuilder: knitr
 Depends: R (>= 3.3)
-Imports: R6, AzureRMR (>= 2.3.0), jsonlite
+Imports: R6 (>= 2.4.1), AzureRMR (>= 2.3.0), jsonlite
 Suggests: knitr, testthat, AzureKeyVault, AzureVMmetadata
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 NeedsCompilation: no
-Packaged: 2019-11-03 08:14:40 UTC; hongo
+Packaged: 2020-02-06 18:11:04 UTC; hongo
 Author: Hong Ooi [aut, cre],
   Microsoft [cph]
 Maintainer: Hong Ooi <hongooi@microsoft.com>
 Repository: CRAN
-Date/Publication: 2019-11-03 09:00:02 UTC
+Date/Publication: 2020-02-06 18:30:02 UTC
