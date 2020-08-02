@@ -1,6 +1,6 @@
 Package: AzureVM
 Title: Virtual Machines in 'Azure'
-Version: 2.2.0
+Version: 2.2.1
 Authors@R: c(
     person("Hong", "Ooi", , "hongooi@microsoft.com", role = c("aut", "cre")),
     person("Microsoft", role="cph")
@@ -16,9 +16,9 @@ Suggests: knitr, rmarkdown, testthat, parallel, AzureKeyVault,
         AzureVMmetadata
 RoxygenNote: 7.1.1
 NeedsCompilation: no
-Packaged: 2020-07-28 09:46:20 UTC; hongo
+Packaged: 2020-08-02 07:47:03 UTC; hongo
 Author: Hong Ooi [aut, cre],
   Microsoft [cph]
 Maintainer: Hong Ooi <hongooi@microsoft.com>
 Repository: CRAN
-Date/Publication: 2020-07-28 10:22:07 UTC
+Date/Publication: 2020-08-02 22:22:13 UTC

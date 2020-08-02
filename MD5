@@ -1,7 +1,7 @@
-2d14590819cfad62e4a8a82a8dd0e793 *DESCRIPTION
+e307cc86bcdc9af0b02bb3b239515df8 *DESCRIPTION
 fe7c703cf07e6f25fb657bab85bc2d2a *LICENSE
-06979bdb923288ed370ac683ce0d7a66 *NAMESPACE
-addfc11db4026011125772c9ef7de12b *NEWS.md
+a9b4e20f481adf2c0fa9a757d109c2ad *NAMESPACE
+8cb07a94dd87db8485b85f148a941c03 *NEWS.md
 518532a08c0094e58be5ecfa8c3a0376 *R/AzureVM.R
 5bb91beff472f750285f43a98537adf8 *R/add_methods.R
 5c309a6300cdea5bebf4f7b4c497536d *R/autoscaler_config.R
@@ -69,9 +69,9 @@ cb2c1ac8f79bd2fbf83249a8d63d2b6f *man/nsg_config.Rd
 ef4175a6667f96dfc29e1184c5af7e34 *man/nsg_rules.Rd
 83f67dca87dc84a079d5c5283282bd4f *man/reexports.Rd
 c9cb7c602e01cbdcbde59ddbaa1d0c26 *man/scaleset_options.Rd
-a1958e8c97ae9c40d68e91afd152d505 *man/vm_config.Rd
+474d0b064fdc37f644869a7a82279b39 *man/vm_config.Rd
 fbd0da03d87cd15d3c7f11acea049d19 *man/vm_resource_config.Rd
-48028b2f3897dcb2f4becfc1d9d751ab *man/vmss_config.Rd
+e200b2944d6e54d1e2d479f1a1f34e41 *man/vmss_config.Rd
 3e541cbd78c4ba826cc00cf7c253406e *man/vnet_config.Rd
 3d71b4b993c597ee0ba95ca8540ff01e *tests/resources/testkey.pub
 09691143503cd28d25a7145de545a8e0 *tests/testthat.R
