@@ -1,7 +1,7 @@
-e307cc86bcdc9af0b02bb3b239515df8 *DESCRIPTION
+916230ed4f4a6e1ef5a5a24e3a715002 *DESCRIPTION
 fe7c703cf07e6f25fb657bab85bc2d2a *LICENSE
 a9b4e20f481adf2c0fa9a757d109c2ad *NAMESPACE
-8cb07a94dd87db8485b85f148a941c03 *NEWS.md
+fe4cb2296e9b4800e24aa13045b92c49 *NEWS.md
 518532a08c0094e58be5ecfa8c3a0376 *R/AzureVM.R
 5bb91beff472f750285f43a98537adf8 *R/add_methods.R
 5c309a6300cdea5bebf4f7b4c497536d *R/autoscaler_config.R
@@ -29,7 +29,7 @@ c42058f27bb470ed26c58a8f053275d3 *R/vm_template_builders.R
 570359411aa388622e25b48d42395cd8 *R/vmss_config.R
 50b6f5298bfcfd067096994f26c62fa5 *R/vmss_template_builders.R
 6f8956319be309a6e183094a6529c63d *R/vnet_config.R
-5e1569d0e603c3bfd40db7bb27e61620 *README.md
+d9d5a72a4181945b1d1c918018f9a3f6 *README.md
 13d881dfd36dda2b6c542bca49f95d6c *build/vignette.rds
 d3903d6e46c9e6b7d243ce2520b46466 *inst/doc/intro.html
 5984504ed929e76dbd5f91520aea94da *inst/doc/intro.rmd
